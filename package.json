@@ -19,5 +19,8 @@
     "node-localstorage": "^2.1.6",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
