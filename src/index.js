@@ -12,7 +12,7 @@ db.sequelize.sync({})
 // })
 
 //App middlewares
-app.use(cors({ origin : 'http://localhost:3000' }))
+app.use(cors({ origin : 'http://as-note-keeping.herokuapp.com' }))
 app.use(express.json())
 app.use(express.urlencoded({extended : false}))
 
