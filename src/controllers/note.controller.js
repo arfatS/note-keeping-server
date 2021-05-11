@@ -118,7 +118,15 @@ exports.findOne = (req, res) => {
 
     Note.findByPk(id)
         .then(data => {
-            res.send({ data })
+            
+            Permission.findAll({ where: { role: 'Owner', noteId: id } })
+            .then(permission => {
+                data.dataValues.ownerId = permission[0].dataValues.userId
+                res.send({ data })
+            })
+            .catch(error => {
+                res.status(500).send({ error })
+            })
         })
         .catch(error => {
             res.status(500).send({ error })
